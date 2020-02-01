@@ -5,9 +5,9 @@ const matcher = /(Что ты умеешь)|(Помоги)|(Как тобой у
 
 exports.matcher = matcher;
 exports.handler = function (ctx) {
-    const lastState = ctx.session.get('last-scene') || 'age';
+    const state = ctx.session.get('scene') || 'age';
     let questions;
-    switch (lastState) {
+    switch (state) {
         case 'age':
             questions = 'Уточните, сколько полных лет человеку. Например, 18 лет, 2 года, 45лет';
             break;
@@ -22,7 +22,7 @@ exports.handler = function (ctx) {
             questions = `Я вас не поняла. Ответьте более детально`; 
     }
 
-    ctx.session.set('scene', lastState);
+    ctx.session.set('scene', state);
 
     return alice.Reply.text(`
         Я помогу выбрать подарок для человека по его описанию
