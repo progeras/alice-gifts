@@ -3,6 +3,22 @@ const utils = require('./../../utils');
 const _ = require('lodash');
 
 module.exports = function (ctx) {
-	utils.setSelected(ctx, {age: ctx.message});
-	return alice.Reply.text(' Тут я узнала возраст и спосила пол');
+	const matches = /.*\d+.*/
+	const { message } = ctx
+	if(!matches.test(message)){
+		const replyes = [
+			"Я вообще то спросила возраст... Назовите в годадх, например '5 лет'",
+			"Это не возраст, назовите в годах, например '34' или '45 лет'"
+		]
+		return alice.Reply.text(_.sample(replyes))
+	}
+	let age = +message.match(/\d+/)
+	utils.setSelected(ctx, {age})
+
+	const replyes = [
+		'Мы дарим подарок мальчику или девочке?',
+		'Выбираем подарок для мальчика или для девочке?'
+	]
+
+	return alice.Reply.text("Мы дарим подарок мальчику или девочке?")
 }
