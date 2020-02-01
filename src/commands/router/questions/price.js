@@ -8,7 +8,7 @@ module.exports = function (ctx) {
     const { message } = ctx
     if(!matches.test(message)){
         const replyes = [
-            "Я вообще то спросила цену... Назовите плиз цену в рублях'",
+            "Я вообще-то спросила цену... Назовите плиз цену в рублях'",
             "Это не цена, назовите в рублях, например '1000' или '1500'"
         ];
         return alice.Reply.text(_.sample(replyes))
