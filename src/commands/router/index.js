@@ -10,8 +10,13 @@ exports.handler = function (ctx) {
     const currState = ctx.session.get('scene');
     if(currState === 'age'){
         return age(ctx);
+    } 
+    else if(currState === 'sex'){
+        return sex(ctx);
     }
-
+    else if(currState === 'price'){
+        return price(ctx);
+    }
     return alice.Reply.text(`
         Сюда впилить роутинг в соответствие со стейтом
     `)
