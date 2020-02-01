@@ -23,7 +23,7 @@ module.exports.getGifts = function (ctx, count) {
     }
 
     return filtered.sort((a, b) => {
-        return a.price - b.price
+        return b.price - a.price
     }).slice(0, count);
 
 }
