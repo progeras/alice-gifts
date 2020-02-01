@@ -2,7 +2,7 @@
 
 const app = require('./app');
 
-const PORT = 80;
+const PORT = process.env.PORT || 8000;
 
 const bot = new app();
 bot.listen(PORT);

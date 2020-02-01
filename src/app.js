@@ -21,6 +21,7 @@ class TestAliceBot {
 
   listen(port) {
     const server = alice.listen(port, '/');
+    console.log(`Server started on :${port}`);
   }
 }
 
