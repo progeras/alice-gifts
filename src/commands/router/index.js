@@ -10,6 +10,9 @@ const matcher = /.*/
 exports.matcher = matcher;
 exports.handler = function (ctx) {
     const currState = ctx.session.get('scene');
+    if(currState === 'default'){
+        return age(ctx);
+    }
     if(currState === 'age'){
         return age(ctx);
     } 

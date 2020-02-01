@@ -21,6 +21,7 @@ class AliceGiftsBot {
   }
 
   init() {
+    //alice.use(getResults());
     alice.command(welcome.matcher, welcome.handler);
     alice.command(skills.matcher, skills.handler);
     alice.command(exit.matcher, exit.handler);
