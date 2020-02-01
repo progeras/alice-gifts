@@ -1,11 +1,16 @@
 'use strict';
 
 const { Alice, Stage, Scene, Reply } = require('yandex-dialogs-sdk');
+const { createMiddleware, createStorage } = require('yandex-dialogs-sdk-lowdb');
 const commands = require('./commands');
 const utils = require('./commands/utils');
 const defaultConfig = require('./config');
 
 const alice = new Alice();
+
+const storage = createStorage('database.json')
+alice.use(createMiddleware(storage));
+
 class TestAliceBot {
   constructor(config = defaultConfig) {
     this.config = config;

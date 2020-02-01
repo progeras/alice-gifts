@@ -10,6 +10,9 @@ exports.handler = function (ctx) {
         "Сколько лет тому, кому Вы дарите подарок?"
     ]
 
+    ctx.session.set('scene', 'age');
+
+
     return alice.Reply.text(`${_.sample([
         'Привет! Тебя приветствует навык Выбор подарка',
         'навык Выбор подарка вас слушает.',

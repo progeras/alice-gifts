@@ -2,6 +2,7 @@ const alice = require('yandex-dialogs-sdk');
 const _ = require('lodash');
 
 exports.handler = function (ctx) {
+    ctx.session.set('lastScene', 'any');
     return alice.Reply.text(`${_.sample([
             'Я вас не поняла.',
             'Ваш запрос не распознан.'])} ` +
