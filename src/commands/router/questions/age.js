@@ -19,6 +19,7 @@ module.exports = function (ctx) {
 		'Мы дарим подарок мальчику или девочке?',
 		'Выбираем подарок для мальчика или для девочке?'
 	]
+	utils.setScene(ctx, 'sex')
 
-	return alice.Reply.text("Мы дарим подарок мальчику или девочке?")
+	return alice.Reply.text(_.sample(replyes))
 }
