@@ -8,10 +8,10 @@ exports.matcher = function (ctx) {
 exports.handler = function (ctx) {
 
     return alice.Reply.text(`${_.sample([
-        'Привет! Тебя приветствует BOT_NAME_PLACEHOLDER.',
-        'BOT_NAME_PLACEHOLDER вас слушает.',
+        'Привет! Тебя приветствует навык Выбор подарка',
+        'навык Выбор подарка вас слушает.',
         'Чем я могу быть для вас полезной ?',
-        'Навык BOT_NAME_PLACEHOLDER запущен. Чем помочь ?'])}`, {
+        'Навык навык Выбор подарка запущен. Чем помочь ?'])}`, {
         buttons: [alice.Markup.button('Что ты умеешь ?')]
     })
 }
