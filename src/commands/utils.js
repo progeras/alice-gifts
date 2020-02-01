@@ -39,5 +39,16 @@ const setSelected = (ctx, value) => {
   ctx.session.set('selected', selected);
 }
 
+const getScene = ctx => {
+  return ctx.session.get('scene') || {}
+}
+
+const setScene = (ctx, value = "default") => {
+  ctx.session.set('scene', value);
+}
+
+
+module.exports.getSelected = getScene;
+module.exports.getSelected = setScene;
 module.exports.getSelected = getSelected;
 module.exports.setSelected = setSelected;
