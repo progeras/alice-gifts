@@ -1,7 +1,17 @@
 const alice = require('yandex-dialogs-sdk');
+const utils = require('./../../utils');
 const _ = require('lodash');
 
 module.exports = function (ctx) {
-	ctx.session.set('scene', 'price');
-	return alice.Reply.text(' Тут я узнала возраст и спосила пол');
+	const gender = ctx.message;
+	if (/(Мужчина)|(Мужик)|(Парень)|(Мальчик)|(Дед)/i.test(gender)) {
+		utils.setSelected(ctx, {sex: 'M'});
+	} else if (/(Женщина)|(Баба)|(Девушка)|(Девочка)|(Бабушка)/i.test(gender)) {
+		utils.setSelected(ctx, {sex: 'F'});
+	} else {
+		return alice.Reply.text('Укажите, пожалуйста, пол правильно. Например, мужчина или женщина');
+	}
+
+	utils.setScene(ctx, 'price');
+	return alice.Reply.text('Отлично. Сколько вы готовы потратить в рублях на подарок?');
 }
