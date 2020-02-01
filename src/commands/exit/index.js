@@ -1,7 +1,7 @@
 const alice = require('yandex-dialogs-sdk');
 const _ = require('lodash');
 
-const matcher = /(надоел(а|о|и))|прощай|конец|хватит|выход|пока/ig
+const matcher = /(надоел(а|о|и))|прощай|конец|хватит|выход|пока|спасибо/ig
 
 exports.matcher = matcher;
 exports.handler = function (ctx) {

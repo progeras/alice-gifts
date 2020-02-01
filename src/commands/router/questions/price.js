@@ -23,5 +23,7 @@ module.exports = function (ctx) {
     }).join('\n');
 
     utils.setScene(ctx);
-    return alice.Reply.text(answer);
+    return alice.Reply.text(answer, {buttons : [
+        alice.Markup.button('Спасибо')
+    ]});
 }
