@@ -1,9 +1,8 @@
 const alice = require('yandex-dialogs-sdk');
+const utils = require('./../../utils');
 const _ = require('lodash');
 
 module.exports = function (ctx) {
-	let selected = ctx.session.get('selected') || {};
-	selected.age = 25;
-	ctx.session.set('selected', selected);
+	utils.setSelected(ctx, {age: ctx.message});
 	return alice.Reply.text(' Тут я узнала возраст и спосила пол');
 }
