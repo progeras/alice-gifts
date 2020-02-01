@@ -19,7 +19,5 @@ exports.handler = function (ctx) {
     else if(currState === 'price'){
         return price(ctx);
     }
-    return alice.Reply.text(`
-        Сюда впилить роутинг в соответствие со стейтом
-    `)
+    return age(ctx)
 }

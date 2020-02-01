@@ -4,9 +4,9 @@ const _ = require('lodash');
 
 module.exports = function (ctx) {
 	const gender = ctx.message;
-	if (/(Мужчина)|(Мужик)|(Парень)|(Мальчик)|(Дед)/i.test(gender)) {
+	if (/(Мужчин)|(Мужик)|(Паре?н)|(Мальчик)|(Дед)/i.test(gender)) {
 		utils.setSelected(ctx, {sex: 'M'});
-	} else if (/(Женщина)|(Баба)|(Девушка)|(Девочка)|(Бабушка)/i.test(gender)) {
+	} else if (/(Женщин)|(Баб)|(Девушк)|(Девочк)|(Бабушк)/i.test(gender)) {
 		utils.setSelected(ctx, {sex: 'F'});
 	} else {
 		return alice.Reply.text('Укажите, пожалуйста, пол правильно. Например, мужчина или женщина');
