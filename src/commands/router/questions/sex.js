@@ -11,7 +11,11 @@ module.exports = function (ctx) {
 	} else {
 		return alice.Reply.text('Укажите, пожалуйста, пол правильно. Например, мужчина или женщина');
 	}
+	const replyes = [
+		'Отлично. Сколько вы готовы потратить в рублях на подарок?',
+		'Я вас поняла. На какую сумму ищем подарок?'
+	]
+	utils.setScene(ctx, 'price')
 
-	utils.setScene(ctx, 'price');
-	return alice.Reply.text('Отлично. Сколько вы готовы потратить в рублях на подарок?');
+	return alice.Reply.text(_.sample(replyes))
 }
