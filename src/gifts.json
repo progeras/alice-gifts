@@ -15,7 +15,7 @@
     },
     {
       "title": "Фен",
-      "sex": "F",
+      "sex": ["F"],
       "min_age": 12,
       "max_age": 60,
       "price": 1000
@@ -43,7 +43,7 @@
     },
     {
       "title": "Скейт",
-      "sex": "M",
+      "sex": ["M"],
       "min_age": 10,
       "max_age": 20,
       "price": 2500
@@ -57,14 +57,14 @@
     },
     {
       "title": "Косметичка",
-      "sex": "F",
+      "sex": ["F"],
       "min_age": 10,
       "max_age": 80,
       "price": 1000
     },
     {
       "title": "Игрушка танк",
-      "sex": "M",
+      "sex": ["M"],
       "min_age": 2,
       "max_age": 10,
       "price": 1000
