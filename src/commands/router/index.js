@@ -2,6 +2,8 @@ const alice = require('yandex-dialogs-sdk');
 const _ = require('lodash');
 
 const age = require('./questions/age');
+const sex = require('./questions/sex');
+const price = require('./questions/price');
 
 const matcher = /.*/
 
