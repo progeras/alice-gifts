@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 // подключение команд, которые возвращают { matcher, handler }
 module.exports.useCommand = (alice, command) => {
   if (command.intent) {
@@ -24,3 +26,29 @@ const handlerBefore = (handler, before) => ctx => {
   before(ctx);
   return handler(ctx);
 };
+
+const getSelected = (ctx) => {
+  return ctx.session.get('selected') || {};
+}
+
+const setSelected = (ctx, value) => {
+  let selected = getSelected(ctx);
+  if(typeof value === 'object'){
+    selected = _.assign(selected, value);
+  }
+  ctx.session.set('selected', selected);
+}
+
+const getScene = ctx => {
+  return ctx.session.get('scene') || "default"
+}
+
+const setScene = (ctx, value = "default") => {
+  ctx.session.set('last-scene', ctx.session.get('scene'));
+  ctx.session.set('scene', value);
+}
+
+module.exports.getScene = getScene;
+module.exports.setScene = setScene;
+module.exports.getSelected = getSelected;
+module.exports.setSelected = setSelected;
