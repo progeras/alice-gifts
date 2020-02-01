@@ -7,7 +7,7 @@ exports.matcher = function (ctx) {
 
 exports.handler = function (ctx) {
     const qwestions = [
-        "Сколько лет тому, комы Вы дарите подарок?"
+        "Сколько лет тому, кому Вы дарите подарок?"
     ]
 
     return alice.Reply.text(`${_.sample([
