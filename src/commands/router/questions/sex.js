@@ -18,6 +18,6 @@ module.exports = function (ctx) {
 	utils.setScene(ctx, 'price')
 
 	return alice.Reply.text(_.sample(replyes), {
-		buttons: [alice.Markup.button('Помоги'),]
+		buttons: [alice.Markup.button('Помоги')]
 	})
 }

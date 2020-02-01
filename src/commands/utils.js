@@ -44,9 +44,9 @@ const getScene = ctx => {
 }
 
 const setScene = (ctx, value = "default") => {
+  ctx.session.set('last-scene', ctx.session.get('scene'));
   ctx.session.set('scene', value);
 }
-
 
 module.exports.getScene = getScene;
 module.exports.setScene = setScene;
