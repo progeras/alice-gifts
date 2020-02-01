@@ -9,7 +9,7 @@ exports.handler = function (ctx) {
     const qwestions = [
         "Сколько лет тому, кому Вы дарите подарок?"
     ]
-
+    
     ctx.session.set('scene', 'age');
 
 

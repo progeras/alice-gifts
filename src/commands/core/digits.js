@@ -2,8 +2,6 @@ const alice = require('yandex-dialogs-sdk');
 
 const matcher = /^[0-9]*$/g;
 
-
-
 exports.matcher = matcher;
 exports.handler = function (ctx) {
     const scene = ctx.session.get('scene');
@@ -11,7 +9,7 @@ exports.handler = function (ctx) {
     if(scene === 'age'){
         ctx.session.set('scene', 'sex');
         return alice.Reply.text(`
-        'Это мужчина или женщина?'
+        Это мужчина или женщина?
     `)
     } else if(scene === 'price'){
         ctx.session.set('scene', 'gifts-list');
