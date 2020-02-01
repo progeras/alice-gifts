@@ -8,6 +8,7 @@ const welcome = require('./commands/welcome');
 const skills = require('./commands/skills');
 const any = require('./commands/any');
 const router = require('./commands/router');
+const exit = require('./commands/exit');
 
 const alice = new Alice();
 const storage = createStorage('database.json');
@@ -22,6 +23,7 @@ class AliceGiftsBot {
   init() {
     alice.command(welcome.matcher, welcome.handler);
     alice.command(skills.matcher, skills.handler);
+    alice.command(exit.matcher, exit.handler);
     alice.command(router.matcher, router.handler);
     alice.any(any.handler);
   }
