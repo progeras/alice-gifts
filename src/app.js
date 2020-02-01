@@ -5,8 +5,6 @@ const commands = require('./commands');
 const utils = require('./commands/utils');
 const defaultConfig = require('./config');
 
-
-
 const alice = new Alice();
 class TestAliceBot {
   constructor(config = defaultConfig) {
