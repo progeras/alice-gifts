@@ -21,5 +21,8 @@ module.exports = function (ctx) {
 	]
 	utils.setScene(ctx, 'sex')
 
-	return alice.Reply.text(_.sample(replyes))
+	return alice.Reply.text(_.sample(replyes), {
+		buttons: [alice.Markup.button('Помоги'),]
+	})
 }
+

@@ -1,7 +1,7 @@
 const alice = require('yandex-dialogs-sdk');
 const _ = require('lodash');
 
-const matcher = /(Что ты умеешь)|(Как тобой управлять)|(Покажи свои (команды|навыки))|(.*помощь.*)/ig
+const matcher = /(Что ты умеешь)|(Помоги)|(Как тобой управлять)|(Покажи свои (команды|навыки))|(.*помощь.*)/ig
 
 exports.matcher = matcher;
 exports.handler = function (ctx) {
