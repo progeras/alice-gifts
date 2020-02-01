@@ -6,12 +6,14 @@ exports.matcher = function (ctx) {
 }
 
 exports.handler = function (ctx) {
+    const qwestions = [
+        "Сколько лет тому, комы Вы дарите подарок?"
+    ]
 
     return alice.Reply.text(`${_.sample([
         'Привет! Тебя приветствует навык Выбор подарка',
         'навык Выбор подарка вас слушает.',
-        'Чем я могу быть для вас полезной ?',
-        'Навык навык Выбор подарка запущен. Чем помочь ?'])}`, {
-        buttons: [alice.Markup.button('Что ты умеешь ?')]
+        'Навык Выбор подарка запущен'])} ${_.sample(qwestions)}`, {
+        buttons: [alice.Markup.button('Что ты умеешь?'),]
     })
 }
