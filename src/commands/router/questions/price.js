@@ -21,6 +21,9 @@ module.exports = function (ctx) {
     let answer = g.map((c) => {
         return `${c.title} (${c.price}р)`;
     }).join('\n');
+     if(!answer) answer = 'К слжалению подарков не найдено';
+    answer += '\nСкажите спасибо, чтобы выйти'
+
 
     utils.setScene(ctx);
     return alice.Reply.text(answer, {buttons : [
